@@ -2,7 +2,7 @@ require 'random_data'
 
 50.times do
   Post.create!(
-    title: RoomData.random_sentence,
+    title: RandomData.random_sentence,
     body: RandomData.random_paragraph
   )
 end
@@ -10,7 +10,7 @@ posts = Post.all
 
 100.times do
   Comment.create!(
-    post: post.sample,
+    post: posts.sample,
     body: RandomData.random_paragraph
   )
 end
