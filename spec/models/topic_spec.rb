@@ -8,7 +8,7 @@ RSpec.describe Topic, type: :model do
 
   it { is_expected.to have_many(:posts) }
   it { should validate_length_of(:name).is_at_least(5) }
-  it { should validate_length_of(:description).is_at_least(20) }
+  it { should validate_length_of(:description).is_at_least(15) }
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:description) }
   
