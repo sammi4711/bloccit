@@ -21,6 +21,14 @@
  
 <h2>Posts</h2>
 <%= render @user.posts %>
+<%= has_posts?(current_user) %>
  
 <h2>Comments</h2>
 <%= render @user.comments %>
+<%= has_comments?(current_user) %>
+
+<h3>Favorited Posts</h3>
+  <% @user.favorites.each do |post| %>
+    <%= render @user.favorites %>
+  <% end %>
+<%= favorited_posts(current_user) %>
