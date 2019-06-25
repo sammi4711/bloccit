@@ -27,8 +27,9 @@
 <%= render @user.comments %>
 <%= has_comments?(current_user) %>
 
-<h3>Favorited Posts</h3>
-  <% @user.favorites.each do |post| %>
-    <%= render @user.favorites %>
+<h3>Favorites</h3>
+  <% @user.favorited_posts.each do |post| %>
+    <img style="float: left;" src="<%= show_gravatar(post.user) %>" /> 
+    <%= render post %>
   <% end %>
-<%= favorited_posts(current_user) %>
+<%= user_favorites(current_user) %>
